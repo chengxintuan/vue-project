@@ -1,1 +1,3 @@
-console.log(32453453543);
+import {component} from './page/home/home';
+
+document.getElementById('app').appendChild(component());

@@ -6,8 +6,6 @@ const rootPath = path.join(__dirname);
 const srcPath = path.join(rootPath, '../src');
 const entryPath = path.join(srcPath, 'main.js');
 
-console.log(entryPath);
-
 const outPath = path.join(rootPath, '../dist');
 
 const config = {
@@ -15,7 +13,13 @@ const config = {
     output: {
         path: outPath,
         filename: 'bundle.js',
-        publicPath: '/'
+        publicPath: ''
+    },
+    devtool: "inline-source-map",
+    devServer: {
+        host: 'localhost',
+        port: 4000,
+        contentBase: './dist'
     },
     resolve: {
         extensions: ['.js', '.ts', '.css', '.less', '.png', '.svg']
@@ -36,7 +40,7 @@ const config = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'Output Management',
+            title: 'hello vue',
             template: 'index.hbs',
             filename: 'app.html'
         })

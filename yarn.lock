@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@types/lodash@^4.14.88":
+  version "4.14.88"
+  resolved "http://registry.npm.taobao.org/@types/lodash/download/@types/lodash-4.14.88.tgz#97eaf2dc668f33ed8e511a5b627035f4ea20b0f5"
+
 abbrev@1:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/abbrev/download/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -151,6 +155,10 @@ array-uniq@^1.0.1:
 array-unique@^0.2.1:
   version "0.2.1"
   resolved "http://registry.npm.taobao.org/array-unique/download/array-unique-0.2.1.tgz#a1d97ccafcbc2625cc70fadceb36a50c58b01a53"
+
+asap@~2.0.3:
+  version "2.0.6"
+  resolved "http://registry.npm.taobao.org/asap/download/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
 
 asn1.js@^4.0.0:
   version "4.9.2"
@@ -1033,7 +1041,7 @@ entities@~1.1.1:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/entities/download/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
 
-errno@^0.1.3:
+errno@^0.1.1, errno@^0.1.3:
   version "0.1.4"
   resolved "http://registry.npm.taobao.org/errno/download/errno-0.1.4.tgz#b896e23a9e5e8ba33871fc996abd3635fc9a1c7d"
   dependencies:
@@ -1682,6 +1690,10 @@ ieee754@^1.1.4:
   version "1.1.8"
   resolved "http://registry.npm.taobao.org/ieee754/download/ieee754-1.1.8.tgz#be33d40ac10ef1926701f6f08a2d86fbfd1ad3e4"
 
+image-size@~0.5.0:
+  version "0.5.5"
+  resolved "http://registry.npm.taobao.org/image-size/download/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
+
 import-local@^0.1.1:
   version "0.1.1"
   resolved "http://registry.npm.taobao.org/import-local/download/import-local-0.1.1.tgz#b1179572aacdc11c6a91009fb430dbcab5f668a8"
@@ -2020,6 +2032,19 @@ less-loader@^4.0.5:
     loader-utils "^1.1.0"
     pify "^2.3.0"
 
+less@^2.7.3:
+  version "2.7.3"
+  resolved "http://registry.npm.taobao.org/less/download/less-2.7.3.tgz#cc1260f51c900a9ec0d91fb6998139e02507b63b"
+  optionalDependencies:
+    errno "^0.1.1"
+    graceful-fs "^4.1.2"
+    image-size "~0.5.0"
+    mime "^1.2.11"
+    mkdirp "^0.5.0"
+    promise "^7.1.1"
+    request "2.81.0"
+    source-map "^0.5.3"
+
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/load-json-file/download/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
@@ -2087,7 +2112,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "http://registry.npm.taobao.org/lodash.uniq/download/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3:
+lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4:
   version "4.17.4"
   resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -2219,7 +2244,7 @@ mime@1.4.1:
   version "1.4.1"
   resolved "http://registry.npm.taobao.org/mime/download/mime-1.4.1.tgz#121f9ebc49e3766f311a76e1fa1c8003c4b03aa6"
 
-mime@^1.5.0:
+mime@^1.2.11, mime@^1.5.0:
   version "1.6.0"
   resolved "http://registry.npm.taobao.org/mime/download/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
 
@@ -2253,7 +2278,7 @@ minimist@~0.0.1:
   version "0.0.10"
   resolved "http://registry.npm.taobao.org/minimist/download/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
 
-mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
+mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
   version "0.5.1"
   resolved "http://registry.npm.taobao.org/mkdirp/download/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
@@ -2912,6 +2937,12 @@ process-nextick-args@~1.0.6:
 process@^0.11.10:
   version "0.11.10"
   resolved "http://registry.npm.taobao.org/process/download/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
+
+promise@^7.1.1:
+  version "7.3.1"
+  resolved "http://registry.npm.taobao.org/promise/download/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
+  dependencies:
+    asap "~2.0.3"
 
 proxy-addr@~2.0.2:
   version "2.0.2"
