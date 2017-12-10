@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const rootPath = path.join(__dirname);
 const srcPath = path.join(rootPath, '../src');
-const entryPath = path.join(srcPath, 'main.js');
+const entryPath = path.join(srcPath, 'page/home/home.ts');
 
 const outPath = path.join(rootPath, '../dist');
 
@@ -18,24 +18,43 @@ const config = {
     devtool: "inline-source-map",
     devServer: {
         host: 'localhost',
-        port: 4000,
+        port: 8000,
         contentBase: './dist'
     },
     resolve: {
-        extensions: ['.js', '.ts', '.css', '.less', '.png', '.svg']
+        extensions: ['.js', '.ts', '.css', '.less', '.png', '.svg', '.vue']
+    },
+    externals: {
+        "vue": "Vue"
     },
     module: {
-        rules: [{
-            test: /\.less/,
-            use: ['style-loader', 'css-loader', 'less-loader'],
-            exclude: /(node_modules)/,
-            include: srcPath
-        },{
-            test: /\.hbs/,
-            use: [{
+        rules: [
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            }, {
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
+                exclude: /node_modules/,
+                options: {
+                    appendTsSuffixTo: [/\.vue$/],
+                }
+            }, {
+                test: /\.less$/,
+                use: ['style-loader', 'css-loader', 'less-loader'],
+                exclude: /(node_modules)/,
+                include: srcPath
+            }, {
+                test: /\.(png|jpg|gif|svg)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]?[hash]'
+                }
+            }, {
+                test: /\.hbs$/,
                 loader: "handlebars-loader"
-            }]
-        }]
+            }
+        ]
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
