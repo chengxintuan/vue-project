@@ -6,9 +6,18 @@
     "module": "es2015",
     "moduleResolution": "node",
     "target": "es5",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "jsx": "preserve",
+    "lib": [
+      "es5",
+      "es2015.promise",
+      "dom"
+    ]
   },
   "include": [
     "./src/**/*"
+  ],
+  "files": [
+    "typings/index.d.ts"
   ]
 }

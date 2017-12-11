@@ -9,6 +9,12 @@
   "license": "MIT",
   "devDependencies": {
     "@types/lodash": "^4.14.88",
+    "awesome-typescript-loader": "^3.4.1",
+    "babel-core": "^6.26.0",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.5.0",
+    "babel-preset-env": "^1.6.1",
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
