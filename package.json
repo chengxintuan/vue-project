@@ -4,6 +4,7 @@
   "description": "this is my first vue-project",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --config webpack/webpack.config.debug.js",
     "debug": "./node_modules/.bin/webpack-dev-server --hot --inline --config webpack/webpack.config.debug.js"
   },
   "license": "MIT",

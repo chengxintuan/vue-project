@@ -1,18 +1,19 @@
 const path = require('path');
+const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const rootPath = path.join(__dirname);
-const srcPath = path.join(rootPath, '../src');
+const rootPath = path.join(__dirname, '../');
+const srcPath = path.join(rootPath, 'src');
 const entryPath = path.join(srcPath, 'page/home/home.tsx');
 
-const outPath = path.join(rootPath, '../dist');
+const outPath = path.join(rootPath, 'dist');
 
 const config = {
-    entry: entryPath,
+    entry: {app: entryPath},
     output: {
         path: outPath,
-        filename: 'bundle.js',
+        filename: '[name].js',
         publicPath: ''
     },
     devtool: "inline-source-map",
@@ -60,7 +61,17 @@ const config = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(['dist'], {
+            root: rootPath, //一个根的绝对路径.
+            verbose: true, //将log写到 console.
+            dry: true //不要删除任何东西，主要用于测试.
+        }),
+        //提取公共代码插件
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "common",
+            filename: '[name].[hash:8].js',
+            minChunks: 2
+        }),
         new HtmlWebpackPlugin({
             title: 'hello vue',
             template: 'index.hbs',

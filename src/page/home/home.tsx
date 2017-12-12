@@ -1,24 +1,25 @@
-import Vue, {VNode} from "vue";
+import {Vue, Component} from "vue-property-decorator";
 import {HomeDecorator} from "./components/HomeDecorator";
+import {HomeChildren} from "./components/HomeChildren";
 
-new Vue({
-    el: "#app",
-    render(h): VNode {
+@Component
+export default class App extends Vue {
+    name: string = "Worlds";
+    age: number = 23;
+
+    onchangeName(name) {
+        this.name = name;
+    }
+
+    render(h) {
         return (
             <div>
-                <input type="text" onInput={this.onchangeName} value={this.name}/>
                 <h1>Hello Component</h1>
                 <HomeDecorator name={this.name} initialEnthusiasm={5}/>
+                <HomeChildren name={this.name} age={this.age} onchangePropName={this.onchangeName}/>
             </div>
         )
-    },
-    data: {
-        name: "World"
-    },
-    methods: {
-        onchangeName(e){
-            const name = e.target.value;
-            this.name = name;
-        }
     }
-});
+}
+
+new App({el: '#app'});
